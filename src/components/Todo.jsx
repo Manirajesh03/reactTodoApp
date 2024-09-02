@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
+import "./style.scss";
 
 const Todo = () => {
   const [todos, setTodos] = useState([]);
@@ -28,9 +29,9 @@ const Todo = () => {
   }, []);
 
   return (
-    <div className="d-flex flex-column container justify-content-center align-items-center">
+    <div className="todo-page d-flex flex-column container justify-content-center align-items-center">
       <h1 className="text-center m-4">Todo App</h1>
-      <div className="input-group mb-3 w-50">
+      <div className=" todo-input input-group mb-3 ">
         <input
           type="text"
           className="form-control"
@@ -50,14 +51,17 @@ const Todo = () => {
         </button>
       </div>
       {todos?.map((todo) => (
-        <div key={todo.id} className="border border-primary m-1 rounded-2 w-50">
-          <ul className="d-flex   align-items-center m-0 p-1">
-            <li className="mx-5">Todo: {todo.todo}</li>
+        <div
+          key={todo.id}
+          className=" todo-block border border-primary m-1 rounded-2 "
+        >
+          <ul className="d-flex align-items-center justify-content-between m-0 p-1 list-unstyled">
+            <li className="">Todo: {todo.todo}</li>
             <li className="list-unstyled">
               Status: {todo.completed ? "Completed" : "Not Completed"}
             </li>
             <button
-              className="mx-5 btn btn-outline-danger"
+              className="btn btn-outline-danger"
               onClick={() => removeTodo(todo.id)}
             >
               Done

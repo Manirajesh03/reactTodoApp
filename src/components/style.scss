@@ -1,0 +1,15 @@
+.todo-page {
+  .todo-input,
+  .todo-block {
+    width: 75%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .todo-page {
+    .todo-input,
+    .todo-block {
+      width: 100%;
+    }
+  }
+}
